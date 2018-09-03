@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Main</title>
+</h:head>
+
+<h:body>
+    <p:growl autoUpdate="true" keepAlive="true" life="5000"/>
+    <p:layout fullPage="true">
+        <p:layoutUnit position="north" header="Main">
+            <h:panelGrid columns="8" cellpadding="10" cellspacing="20">
+                <p:button outcome="goToPictures" value="Pictures"/>
+                <p:button value="Profile" outcome="goToProfile"/>
+                <p:button value="History" outcome="goToHistory"/>
+                <p:button value="About" outcome="goToAbout"/>
+                <p:button value="Messages" outcome="goToMessages"/>
+                <p:button value="Security" outcome="goToSecurity"/>
+                <p:button value="Settings" outcome="goToSettings"/>
+                <p:button value="Tool" outcome="goToTool"/>
+            </h:panelGrid>
+        </p:layoutUnit>
+        <p:layoutUnit position="center">
+            <h:form>
+                <h:panelGrid columns="2" cellpadding="10" cellspacing="20">
+                    <p:outputLabel value="Name: "/>
+                    <p:inputText value="#{person.name}"/>
+                    <p:outputLabel value="Surname: "/>
+                    <p:inputText value="#{person.surname}"/>
+                    <p:outputLabel value="Age: "/>
+                    <p:inputText value="#{person.age}"/>
+                    <p:outputLabel value="Gender: "/>
+                    <p:inputText value="#{person.gender}"/>
+                    <p:commandButton ajax="false" value="Go" action="About"/>
+                </h:panelGrid>
+            </h:form>
+        </p:layoutUnit>
+        <p:layoutUnit position="west" size="850" header="Login">
+            <h:form id="form1">
+                <h:panelGrid columns="2" cellpadding="10" cellspacing="20" style="margin-left: auto; margin-right: auto">
+                    <p:outputLabel value="Name: "/>
+                    <p:inputText value="#{main.login}"/>
+                    <p:outputLabel value="Password: "/>
+                    <p:inputText value="#{main.password}"/>
+                    <p:commandButton value="Login" update="form1" action="#{main.checkPassword}"/>
+                </h:panelGrid>
+            </h:form>
+        </p:layoutUnit>
+    </p:layout>
+    <br/>
+</h:body>
+</html>
