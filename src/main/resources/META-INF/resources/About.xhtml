@@ -20,15 +20,33 @@
     <br/>
     <h:panelGrid columns="2" cellspacing="10" cellpadding="20">
 
-    <p:outputLabel value="Name: "/>
-    <p:outputLabel value="#{person.name}"/>
-    <p:outputLabel value="Surname: "/>
-    <p:outputLabel value="#{person.surname}"/>
-    <p:outputLabel value="Age:"/>
-    <p:outputLabel value="#{person.age}"/>
-    <p:outputLabel value="Gender: "/>
-    <p:outputLabel value="#{person.gender}"/>
+        <p:outputLabel value="Name: "/>
+        <p:outputLabel value="#{person.name}"/>
+        <p:outputLabel value="Surname: "/>
+        <p:outputLabel value="#{person.surname}"/>
+        <p:outputLabel value="Age:"/>
+        <p:outputLabel value="#{person.age}"/>
+        <p:outputLabel value="Gender: "/>
+        <p:outputLabel value="#{person.gender}"/>
     </h:panelGrid>
+
+    <p:selectOneMenu value="1">
+        <f:selectItem itemLabel="Dog" itemValue="1"/>
+        <f:selectItem itemLabel="Cat" itemValue="2"/>
+        <f:selectItem itemLabel="CatDog" itemValue="3"/>
+    </p:selectOneMenu>
+
+    <p:selectOneRadio value="1" columns="2" layout="grid">
+        <f:selectItem itemLabel="Dog" itemValue="1"/>
+        <f:selectItem itemLabel="Cat" itemValue="2"/>
+        <f:selectItem itemLabel="CatDog" itemValue="3"/>
+        <f:selectItem itemLabel="Mouse" itemValue="4"/>
+    </p:selectOneRadio>
+
+    <p:selectManyCheckbox value="#{person.name}">
+        <f:selectItem itemLabel="Dog" itemValue="1"/>
+        <f:selectItem itemLabel="Cat" itemValue="2"/>
+    </p:selectManyCheckbox>
 
 </h:body>
 </html>

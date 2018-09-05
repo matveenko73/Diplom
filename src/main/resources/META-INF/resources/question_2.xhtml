@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Qestion_2</title>
+</h:head>
+
+<h:body>
+    <h:form id="form2">
+
+        <h:panelGrid columns="2" cellpadding="10" cellspacing="20">
+            <p:outputLabel value="Your Country: "/>
+            <p:inputText value="#{question_2.country}"/>
+            <p:outputLabel value="Yor City: "/>
+            <p:inputText value="#{question_2.city}"/>
+
+            <p:outputLabel value="Select your gender"/>
+            <p:selectOneMenu value="#{question_2.gender}">
+                <f:selectItem itemLabel="Female" itemValue="Female"/>
+                <f:selectItem itemLabel="Male" itemValue="Male"/>
+            </p:selectOneMenu>
+
+            <p:outputLabel value="How many children"/>
+            <p:selectOneRadio value="#{question_2.children}">
+                <f:selectItem itemLabel="0" itemValue="0"/>
+                <f:selectItem itemLabel="1-3" itemValue="1-3"/>
+                <f:selectItem itemLabel="More than 3" itemValue="More than 3"/>
+            </p:selectOneRadio>
+
+            <p:outputLabel value="Yor preference"/>
+            <p:selectManyCheckbox value="#{question_2.genderPreference}">
+                <f:selectItem itemLabel="Male" itemValue="Male"/>
+                <f:selectItem itemLabel="Female" itemValue="Female"/>
+            </p:selectManyCheckbox>
+        </h:panelGrid>
+        <p:commandButton value="Prev" update="form2" action="goToQuestion_1"/>
+
+    </h:form>
+</h:body>
+</html>

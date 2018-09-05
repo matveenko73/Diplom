@@ -51,6 +51,18 @@
             <from-outcome>goToInvalidPassword</from-outcome>
             <to-view-id>/InvalidPassword</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>goToQuestion_1</from-outcome>
+            <to-view-id>/question_1</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goToQuestion_2</from-outcome>
+            <to-view-id>/question_2</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goToQuestion_3</from-outcome>
+            <to-view-id>/question_3</to-view-id>
+        </navigation-case>
     </navigation-rule>
 
 </faces-config>
