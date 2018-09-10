@@ -63,6 +63,10 @@
             <from-outcome>goToQuestion_3</from-outcome>
             <to-view-id>/question_3</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>goToInformation</from-outcome>
+            <to-view-id>/information</to-view-id>
+        </navigation-case>
     </navigation-rule>
 
 </faces-config>

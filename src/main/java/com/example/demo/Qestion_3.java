@@ -54,6 +54,19 @@ public class Qestion_3 {
         this.carPreference = carPreference;
     }
 
+    public String checkMargins() {
+        if (profession != null && !profession.trim().equals("") &&
+                nameOrganization != null && !nameOrganization.trim().equals("") &&
+                education != null && !education.trim().equals("") &&
+                car != null && !car.trim().equals("") &&
+                carPreference != null && carPreference.length != 0) {
+
+            return "goToInformation";
+        }
+        sendMessage("Заполнены не все поля");
+        return null;
+    }
+
     public void sendMessage(String message) {
         FacesContext context = FacesContext.getCurrentInstance();
 

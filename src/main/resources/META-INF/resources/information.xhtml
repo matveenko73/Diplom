@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Information</title>
+</h:head>
+
+<h:body>
+
+    <h:panelGrid columns="6" cellspacing="10" cellpadding="20">
+
+        <p:outputLabel value="Name: "/>
+        <p:outputLabel value="#{question_1.name}"/>
+        <p:outputLabel value="Surname: "/>
+        <p:outputLabel value="#{question_1.surname}"/>
+        <p:outputLabel value="Age:"/>
+        <p:outputLabel value="#{question_1.age}"/>
+        <p:outputLabel value="Family status: "/>
+        <p:outputLabel value="#{question_1.familyStatus}"/>
+        <p:outputLabel value="Preference: "/>
+        <p:outputLabel value="#{question_1.preference}"/>
+
+
+        <p:outputLabel value="Country: "/>
+        <p:outputLabel value="#{question_2.country}"/>
+        <p:outputLabel value="City: "/>
+        <p:outputLabel value="#{question_2.city}"/>
+        <p:outputLabel value="Gender:"/>
+        <p:outputLabel value="#{question_2.gender}"/>
+        <p:outputLabel value="Children: "/>
+        <p:outputLabel value="#{question_2.children}"/>
+        <p:outputLabel value="Gender Preference: "/>
+        <p:outputLabel value="#{question_2.genderPreference}"/>
+
+        <p:outputLabel value="Profession: "/>
+        <p:outputLabel value="#{question_3.profession}"/>
+        <p:outputLabel value="Organization name: "/>
+        <p:outputLabel value="#{question_3.nameOrganization}"/>
+        <p:outputLabel value="Education:"/>
+        <p:outputLabel value="#{question_3.education}"/>
+        <p:outputLabel value="Car: "/>
+        <p:outputLabel value="#{question_3.car}"/>
+        <p:outputLabel value="Car Preference: "/>
+        <p:outputLabel value="#{question_3.carPreference}"/>
+    </h:panelGrid>
+
+</h:body>
+</html>

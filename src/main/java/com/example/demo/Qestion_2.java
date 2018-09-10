@@ -54,11 +54,24 @@ public class Qestion_2 {
     public void setChildren(String children) {
         this.children = children;
     }
+    public String checkMargins() {
+        if (country != null && !country.trim().equals("") &&
+                city != null && !city.trim().equals("") &&
+                gender != null && !gender.trim().equals("") &&
+                children != null && !children.trim().equals("") &&
+                genderPreference != null && genderPreference.length != 0) {
 
+            return "goToQuestion_3";
+        }
+
+        sendMessage("Заполнены не все поля");
+        return null;
+    }
 
     public void sendMessage(String message) {
         FacesContext context = FacesContext.getCurrentInstance();
 
         context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, message, null));
     }
+
 }

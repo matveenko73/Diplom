@@ -12,7 +12,7 @@
 </h:head>
 
 <h:body>
-    <p:growl id="growl1" keepAlive="true" life="10000" />
+    <p:growl id="growl1" keepAlive="true" life="5000"/>
 
     <h:form id="form1">
         <h:panelGrid columns="2" cellpadding="10" cellspacing="20">
@@ -39,6 +39,8 @@
                 <f:selectItem itemLabel="Dog" itemValue="Dog"/>
                 <f:selectItem itemLabel="Cat" itemValue="Cat"/>
             </p:selectManyCheckbox>
+        </h:panelGrid>
+        <h:panelGrid style="margin-left: auto">
             <p:commandButton value="Next" update="form1,growl1" action="#{question_1.checkMargins}"/>
         </h:panelGrid>
     </h:form>
