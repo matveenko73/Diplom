@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>Registration</title>
+</h:head>
+
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2" cellpadding="10" cellspacing="20"
+                     style="margin-left: auto; margin-right: auto">
+            <p:outputLabel value="Enter e-male: "/>
+            <p:inputText value="#{registrationPage.emale}"/>
+            <p:outputLabel value="Enter login: "/>
+            <p:inputText value="#{registrationPage.login}"/>
+            <p:outputLabel value="Enter password: "/>
+            <p:inputText value="#{registrationPage.password}"/>
+            <p:commandButton ajax="false" value="Save" action="#{registrationPage.save}"/>
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>
