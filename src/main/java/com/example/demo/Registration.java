@@ -10,25 +10,34 @@ public class Registration {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    private long id;
-    private String emale;
+    private Long id;
+    private String email;
     private String login;
     private String password;
+    private String repeatPassword;
 
-    public long getId() {
+    public String getRepeatPassword() {
+        return repeatPassword;
+    }
+
+    public void setRepeatPassword(String repeatPassword) {
+        this.repeatPassword = repeatPassword;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getEmale() {
-        return emale;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmale(String emale) {
-        this.emale = emale;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getLogin() {

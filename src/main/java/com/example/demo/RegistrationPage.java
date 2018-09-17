@@ -1,23 +1,38 @@
 package com.example.demo;
 
+import org.springframework.data.domain.Example;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.Optional;
 
 @Named
 public class RegistrationPage {
 
     @Inject
     private RegistrationRepository registrationRepository;
-    private String emale;
+    private String email;
     private String login;
     private String password;
+    private String repeatPassword;
 
-    public String getEmale() {
-        return emale;
+
+    public String getRepeatPassword() {
+        return repeatPassword;
     }
 
-    public void setEmale(String emale) {
-        this.emale = emale;
+    public void setRepeatPassword(String repeatPassword) {
+        this.repeatPassword = repeatPassword;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getLogin() {
@@ -35,11 +50,34 @@ public class RegistrationPage {
     public void setPassword(String password) {
         this.password = password;
     }
-    public void save() {
-        Registration registration = new Registration();
-        registration.setEmale(emale);
-        registration.setLogin(login);
-        registration.setPassword(password);
-        registrationRepository.save(registration);
+
+    public String save() {
+        if (password.equals(repeatPassword)) {
+
+            Registration example = new Registration();
+            example.setLogin(login);
+            Optional<Registration> alreadyExist = registrationRepository.findOne(Example.of(example));
+            if (alreadyExist.isPresent()) {
+                sendMessage("Такой пользователь уже существует");
+                return null;
+            }
+
+            Registration registration = new Registration();
+            registration.setEmail(email);
+            registration.setLogin(login);
+            registration.setPassword(password);
+            registrationRepository.save(registration);
+
+            return "goToLogin";
+        } else {
+            sendMessage("Пароли не совпадают");
+        }
+        return null;
+    }
+
+    public void sendMessage(String message) {
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_FATAL, message, null));
     }
 }

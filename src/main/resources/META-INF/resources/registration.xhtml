@@ -10,16 +10,19 @@
 </h:head>
 
 <h:body>
+    <p:growl autoUpdate="true" keepAlive="true" life="5000"/>
     <h:form>
         <h:panelGrid columns="2" cellpadding="10" cellspacing="20"
                      style="margin-left: auto; margin-right: auto">
-            <p:outputLabel value="Enter e-male: "/>
-            <p:inputText value="#{registrationPage.emale}"/>
+            <p:outputLabel value="Enter e-mail: "/>
+            <p:inputText value="#{registrationPage.email}"/>
             <p:outputLabel value="Enter login: "/>
             <p:inputText value="#{registrationPage.login}"/>
             <p:outputLabel value="Enter password: "/>
             <p:inputText value="#{registrationPage.password}"/>
-            <p:commandButton ajax="false" value="Save" action="#{registrationPage.save}"/>
+            <p:outputLabel value="Repeat password: "/>
+            <p:inputText value="#{registrationPage.repeatPassword}"/>
+            <p:commandButton ajax="false" value="Registration" action="#{registrationPage.save}"/>
         </h:panelGrid>
     </h:form>
 </h:body>

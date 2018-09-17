@@ -1,11 +1,18 @@
 package com.example.demo;
 
+import org.springframework.data.domain.Example;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.Optional;
 
 @Named
 public class LoginPage {
+
+    @Inject
+    private RegistrationRepository registrationRepository;
 
     private String login;
     private String password;
@@ -27,8 +34,19 @@ public class LoginPage {
     }
 
     public String checkPassword() {
-        if (password.equals("123456") && login.equals("andrew")) {
+
+        if (password.equals("admin") && login.equals("admin")) {
+            return "goToAdministratorPage";
+        }
+
+        Registration examplePassword = new Registration();
+        examplePassword.setPassword(password);
+        examplePassword.setLogin(login);
+        Optional<Registration> existPassword = registrationRepository.findOne(Example.of(examplePassword));
+
+        if (existPassword.isPresent()) {
             return "goToQuestion_1";
+
         } else {
             login = "";
             password = "";

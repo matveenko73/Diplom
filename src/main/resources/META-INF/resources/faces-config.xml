@@ -67,6 +67,14 @@
             <from-outcome>goToInformation</from-outcome>
             <to-view-id>/information</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>goToLogin</from-outcome>
+            <to-view-id>/login</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goToAdministratorPage</from-outcome>
+            <to-view-id>/administratorPage</to-view-id>
+        </navigation-case>
     </navigation-rule>
-
+    administratorPage
 </faces-config>
