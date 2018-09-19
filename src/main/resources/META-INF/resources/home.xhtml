@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>HomePage</title>
+</h:head>
+
+<h:body style="font-size: 13px; background-color: darkslateblue">
+    <p:growl autoUpdate="true" keepAlive="true" life="5000"/>
+    <p:layout fullPage="true">
+        <p:layoutUnit position="north" maxSize="165" style="border: none">
+
+            <p:layout>
+                <p:layoutUnit position="center" resizable="false">
+                    <h:form id="form2">
+                        <h:panelGrid columns="2" cellpadding="6" cellspacing="6"
+                                     style="margin-left: auto; margin-right: auto">
+                            <p:outputLabel value="Name: "/>
+                            <p:inputText value="#{main.login}"/>
+                            <p:outputLabel value="Password: "/>
+                            <p:inputText value="#{main.password}"/>
+                            <p:commandButton value="Login" update="form2" action="#{main.checkPassword}"/>
+                        </h:panelGrid>
+                    </h:form>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" minSize="900" resizable="false">
+
+                    <div class="ui-g">
+                        <div class="ui-g-4">
+                            <p:button outcome="goToPictures" value="Pictures"/>
+                        </div>
+                        <div class="ui-g-4"><p:button value="Регистрация" outcome="goToProfile"/></div>
+                        <div class="ui-g-4"><p:button value="О нас" outcome="goToHistory"/></div>
+                    </div>
+
+                </p:layoutUnit>
+            </p:layout>
+
+        </p:layoutUnit>
+
+        <p:layoutUnit position="west" minSize="700">
+            <h:form>
+                <h:panelGrid columns="5" cellpadding="12" cellspacing="20">
+                    <p:outputLabel value="Марка"/>
+                    <p:selectOneMenu value="#{question_1.age}">
+                        <f:selectItem itemLabel="Ford" itemValue="1-16"/>
+                        <f:selectItem itemLabel="Toyota" itemValue="17-21"/>
+                        <f:selectItem itemLabel="BMW" itemValue="More than 21"/>
+                    </p:selectOneMenu>
+                    <p:outputLabel value="Цена"/>
+                    <p:selectOneMenu value="#{question_1.age}">
+                        <f:selectItem itemLabel="От" itemValue="1-16"/>
+                    </p:selectOneMenu>
+                    <p:selectOneMenu value="#{question_1.age}">
+                        <f:selectItem itemLabel="До" itemValue="1-16"/>
+                    </p:selectOneMenu>
+                    <p:outputLabel value="Модель"/>
+                    <p:selectOneMenu value="#{question_1.age}">
+                        <f:selectItem itemLabel="Mondeo" itemValue="1-16"/>
+                        <f:selectItem itemLabel="Focus" itemValue="17-21"/>
+                        <f:selectItem itemLabel="Camry" itemValue="More than 21"/>
+                    </p:selectOneMenu>
+                    <p:outputLabel value="Год"/>
+                    <p:selectOneMenu value="#{question_1.age}">
+                        <f:selectItem itemLabel="От" itemValue="1-16"/>
+                    </p:selectOneMenu>
+                    <p:selectOneMenu value="#{question_1.age}">
+                        <f:selectItem itemLabel="До" itemValue="1-16"/>
+                    </p:selectOneMenu>
+
+                    <p:outputLabel value="Кузов"/>
+                    <p:selectOneMenu value="#{question_1.age}">
+                        <f:selectItem itemLabel="Седан" itemValue="1-16"/>
+                        <f:selectItem itemLabel="Универсал" itemValue="17-21"/>
+                        <f:selectItem itemLabel="Хечбек" itemValue="More than 21"/>
+                    </p:selectOneMenu>
+                    <p:outputLabel value="Регион"/>
+                    <p:selectOneMenu value="#{question_1.age}">
+                        <f:selectItem itemLabel="Киев" itemValue="1-16"/>
+                        <f:selectItem itemLabel="Донецк" itemValue="17-21"/>
+                        <f:selectItem itemLabel="Одесса" itemValue="More than 21"/>
+                    </p:selectOneMenu>
+                </h:panelGrid>
+            </h:form>
+        </p:layoutUnit>
+        <p:layoutUnit position="center">
+
+        </p:layoutUnit>
+
+    </p:layout>
+</h:body>
+</html>
