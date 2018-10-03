@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Test;
 
 import javax.inject.Inject;
 import javax.inject.Named;
