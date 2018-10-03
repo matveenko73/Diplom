@@ -12,14 +12,14 @@ public class Car {
     private String brand;
     private String model;
     private Integer engineSize;
-    private Enum body;
-    private String region;
+    private Body body;
+    private Region region;
     private Integer price;
     private Integer priductionYear;
-    private Enum fuel;
-    private Enum state;
-    private Enum driveUnit;
-    private Enum transmission;
+    private Fuel fuel;
+    private State state;
+    private DriveUnit driveUnit;
+    private Transmission transmission;
 
     public Long getId() {
         return id;
@@ -53,19 +53,19 @@ public class Car {
         this.engineSize = engineSize;
     }
 
-    public Enum getBody() {
+    public Body getBody() {
         return body;
     }
 
-    public void setBody(Enum body) {
+    public void setBody(Body body) {
         this.body = body;
     }
 
-    public String getRegion() {
+    public Region getRegion() {
         return region;
     }
 
-    public void setRegion(String region) {
+    public void setRegion(Region region) {
         this.region = region;
     }
 
@@ -85,35 +85,35 @@ public class Car {
         this.priductionYear = priductionYear;
     }
 
-    public Enum getFuel() {
+    public Fuel getFuel() {
         return fuel;
     }
 
-    public void setFuel(Enum fuel) {
+    public void setFuel(Fuel fuel) {
         this.fuel = fuel;
     }
 
-    public Enum getState() {
+    public State getState() {
         return state;
     }
 
-    public void setState(Enum state) {
+    public void setState(State state) {
         this.state = state;
     }
 
-    public Enum getDriveUnit() {
+    public DriveUnit getDriveUnit() {
         return driveUnit;
     }
 
-    public void setDriveUnit(Enum driveUnit) {
+    public void setDriveUnit(DriveUnit driveUnit) {
         this.driveUnit = driveUnit;
     }
 
-    public Enum getTransmission() {
+    public Transmission getTransmission() {
         return transmission;
     }
 
-    public void setTransmission(Enum transmission) {
+    public void setTransmission(Transmission transmission) {
         this.transmission = transmission;
     }
 }

@@ -2,6 +2,7 @@ package com.example.demo;
 
 import org.springframework.data.domain.Example;
 
+import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -32,6 +33,7 @@ public class LoginPage {
     public void setPassword(String password) {
         this.password = password;
     }
+
 
     public String checkPassword() {
 
