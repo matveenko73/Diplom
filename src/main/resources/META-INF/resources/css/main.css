@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+header {
+    background: url(../img/road.jpg) no-repeat center top / cover;
+    height: 400px;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.heading {
+    float: left;
+    margin-top: 15px;
+}
+
+.menu {
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.menu li {
+    float: left;
+    display: block;
+    margin-right: 40px;
+}
+
+.menu a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.titles {
+    margin-top: 130px;
+}
+
+.title-1 {
+    font-size: 45px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.title-2 {
+    font-size: 30px;
+    color: aliceblue;
+    text-align: center;
+}
