@@ -1,4 +1,7 @@
-package com.example.demo;
+package com.example.demo.pages;
+
+import com.example.demo.*;
+import com.example.demo.repositories.CarRepository;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -16,8 +19,9 @@ public class CarPage {
     private Body body;
     private Region region;
     private Integer price;
-    private Integer priductionYear;
+    private Integer productionYear;
     private Fuel fuel;
+
     private State state;
     private DriveUnit driveUnit;
     private Transmission transmission;
@@ -32,7 +36,7 @@ public class CarPage {
         car1.setBody(Body.Седан);
         car1.setRegion(Region.Винницкая);
         car1.setPrice(10000);
-        car1.setPriductionYear(2007);
+        car1.setProductionYear(2007);
         car1.setFuel(Fuel.Бензин);
         car1.setState(State.Нормальное);
         car1.setDriveUnit(DriveUnit.Передний);
@@ -45,7 +49,7 @@ public class CarPage {
         car2.setBody(Body.Хетчбэк);
         car2.setRegion(Region.Киевская);
         car2.setPrice(20000);
-        car2.setPriductionYear(2013);
+        car2.setProductionYear(2013);
         car2.setFuel(Fuel.ГазБензин);
         car2.setState(State.Хорошее);
         car2.setDriveUnit(DriveUnit.Полный);
@@ -58,7 +62,7 @@ public class CarPage {
         car3.setBody(Body.Седан);
         car3.setRegion(Region.Запорожская);
         car3.setPrice(13000);
-        car3.setPriductionYear(2008);
+        car3.setProductionYear(2008);
         car3.setFuel(Fuel.ГазБензин);
         car3.setState(State.Нормальное);
         car3.setDriveUnit(DriveUnit.Передний);
@@ -71,7 +75,7 @@ public class CarPage {
         car4.setBody(Body.Кабриолет);
         car4.setRegion(Region.Житомирская);
         car4.setPrice(3000);
-        car4.setPriductionYear(2005);
+        car4.setProductionYear(2005);
         car4.setFuel(Fuel.Бензин);
         car4.setState(State.НеРастоможеное);
         car4.setDriveUnit(DriveUnit.Задний);
@@ -84,7 +88,7 @@ public class CarPage {
         car5.setBody(Body.Универсал);
         car5.setRegion(Region.Киевская);
         car5.setPrice(7000);
-        car5.setPriductionYear(2002);
+        car5.setProductionYear(2002);
         car5.setFuel(Fuel.Бензин);
         car5.setState(State.Хорошее);
         car5.setDriveUnit(DriveUnit.Передний);
@@ -146,11 +150,11 @@ public class CarPage {
     }
 
     public Integer getPriductionYear() {
-        return priductionYear;
+        return productionYear;
     }
 
     public void setPriductionYear(Integer priductionYear) {
-        this.priductionYear = priductionYear;
+        this.productionYear = priductionYear;
     }
 
     public Fuel getFuel() {

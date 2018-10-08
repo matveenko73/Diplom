@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.example.demo.pages.Person;
+
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;

@@ -15,7 +15,7 @@ public class Car {
     private Body body;
     private Region region;
     private Integer price;
-    private Integer priductionYear;
+    private Integer productionYear;
     private Fuel fuel;
     private State state;
     private DriveUnit driveUnit;
@@ -77,12 +77,12 @@ public class Car {
         this.price = price;
     }
 
-    public Integer getPriductionYear() {
-        return priductionYear;
+    public Integer getProductionYear() {
+        return productionYear;
     }
 
-    public void setPriductionYear(Integer priductionYear) {
-        this.priductionYear = priductionYear;
+    public void setProductionYear(Integer productionYear) {
+        this.productionYear = productionYear;
     }
 
     public Fuel getFuel() {

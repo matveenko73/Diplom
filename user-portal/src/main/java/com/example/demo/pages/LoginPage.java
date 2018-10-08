@@ -1,8 +1,9 @@
-package com.example.demo;
+package com.example.demo.pages;
 
+import com.example.demo.Registration;
+import com.example.demo.repositories.RegistrationRepository;
 import org.springframework.data.domain.Example;
 
-import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;

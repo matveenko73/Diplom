@@ -1,4 +1,7 @@
-package com.example.demo;
+package com.example.demo.pages;
+
+import com.example.demo.Registration;
+import com.example.demo.repositories.RegistrationRepository;
 
 import javax.inject.Inject;
 import javax.inject.Named;
