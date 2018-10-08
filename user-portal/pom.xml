@@ -4,28 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>org.joinfaces</groupId>
-        <artifactId>joinfaces-parent</artifactId>
-        <version>3.2.4</version>
-        <relativePath/>
+        <groupId>com.example.demo</groupId>
+        <artifactId>jsf-application</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.example.demo</groupId>
-    <artifactId>jsf-application</artifactId>
+    <artifactId>user-portal</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
-
-    <modules>
-        <module>common</module>
-        <module>user-portal</module>
-        <module>admin-portal</module>
-    </modules>
-
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-    </properties>
+    <packaging>jar</packaging>
 
     <dependencies>
 
@@ -62,11 +48,13 @@
         </dependency>
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>primefaces</id>
-            <url>https://repository.primefaces.org/</url>
-        </repository>
-    </repositories>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
