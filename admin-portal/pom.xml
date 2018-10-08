@@ -63,4 +63,10 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>primefaces</id>
+            <url>https://repository.primefaces.org/</url>
+        </repository>
+    </repositories>
 </project>
