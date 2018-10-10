@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -24,28 +25,24 @@ public class MainSite {
 //            System.out.println(picture.getAttribute("src"));
 //        }
 
-        System.out.println();
+//        System.out.println();
 
-        List<WebElement> prices = driver.findElementsByCssSelector(".rst-ocb-i-d-l-i-s-p");
-        for (WebElement price : prices) {
-            System.out.println(price.getText());
+        List<WebElement> nextPages = driver.findElementsByCssSelector("ul.pagination a");
+        for (WebElement nextPage : nextPages) {
+//            nextPage.findElements(By.cssSelector("324234234"));
+            nextPage.click();
+
+            List<WebElement> prices = driver.findElementsByCssSelector(".rst-ocb-i-d-l-i-s");
+            int i = 0;
+            for (WebElement price : prices) {
+                i++;
+                if (i == 7) {
+                    i = 1;
+                    System.out.println();
+                }
+                System.out.println(price.getText());
+            }
         }
-
-        System.out.println();
-
-        List<WebElement> years = driver.findElementsByClassName(".rst-ocb-i-d-l-i");
-        for (WebElement year : years) {
-            System.out.println(year.getText());
-        }
-
-        System.out.println();
-
-        List<WebElement> regions = driver.findElementsByClassName(".rst-ocb-i-d-l-i-s rst-ocb-i-d-l-i-s-p");
-        for (WebElement region : regions) {
-            System.out.println(region.getText());
-        }
-
-
         //driver.close();
     }
 }
