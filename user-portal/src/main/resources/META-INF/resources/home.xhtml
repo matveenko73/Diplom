@@ -90,7 +90,12 @@
         </p:layoutUnit>
         <p:layoutUnit position="center">
 
+            <p:dataGrid id="table" var="car" value="#{carPage.cars}" paginator="true" rows="5" columns="1">
 
+                <p:graphicImage value="../img/2.jpg" width="50px" height="50px" />
+                <p:outputLabel value="#{car.brand} #{car.model} - #{car.body} #{car.engineSize}" />
+
+            </p:dataGrid>
 
         </p:layoutUnit>
 

@@ -6,6 +6,7 @@ import com.example.demo.repositories.CarRepository;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.util.List;
 
 @Named
 public class CarPage {
@@ -26,6 +27,7 @@ public class CarPage {
     private DriveUnit driveUnit;
     private Transmission transmission;
 
+    private List<Car> cars;
 
     @PostConstruct
     public void carInit() {
@@ -99,6 +101,16 @@ public class CarPage {
         carRepository.save(car3);
         carRepository.save(car4);
         carRepository.save(car5);
+
+        cars = carRepository.findAll();
+    }
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
     }
 
     public String getBrand() {

@@ -1,7 +1,6 @@
 package com.example.demo.pages;
 
 import com.example.demo.pages.Qestion_1;
-import com.example.demo.pages.Qestion_2;
 import com.example.demo.pages.Qestion_3;
 
 import javax.inject.Inject;
@@ -12,9 +11,6 @@ public class Information {
 
     @Inject
     private Qestion_1 question1;
-
-    @Inject
-    private Qestion_2 question2;
 
     @Inject
     private Qestion_3 question3;
