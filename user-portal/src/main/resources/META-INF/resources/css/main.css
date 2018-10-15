@@ -48,10 +48,11 @@ header {
     background: url(../img/2.jpg) no-repeat center top / cover;
     height: 500px;
     display: block;
+    padding-top: 100px;
 }
 
 .search-menu {
-    background-color: #9E9E9E;
+    background-color: black;
     width: 1000px;
     height: 250px;
     display: block;
