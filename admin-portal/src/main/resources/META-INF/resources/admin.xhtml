@@ -12,7 +12,9 @@
 </h:head>
 
 <h:body>
-    <h1>Tool</h1>
-
+    <p:growl/>
+    <h:form id="form1">
+            <p:commandButton value="Run" update="form1" action="#{adminPage.run}"/>
+    </h:form>
 </h:body>
 </html>

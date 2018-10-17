@@ -9,6 +9,8 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
+    private String pictures;
+    private String urles;
     private String brand;
     private String model;
     private Integer engineSize;
@@ -20,6 +22,23 @@ public class Car {
     private State state;
     private DriveUnit driveUnit;
     private Transmission transmission;
+
+
+    public String getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(String pictures) {
+        this.pictures = pictures;
+    }
+
+    public String getUrles() {
+        return urles;
+    }
+
+    public void setUrles(String urles) {
+        this.urles = urles;
+    }
 
     public Long getId() {
         return id;
