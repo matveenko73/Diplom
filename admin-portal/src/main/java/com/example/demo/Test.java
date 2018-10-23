@@ -21,11 +21,6 @@ public class Test {
         s2 = s2.substring(0, s2.indexOf('/'));
         System.out.println(s2);
 
-        int k = car.indexOf("/");
-
-//        String model = s2.substring(j, k);
-//        System.out.println(model);
-
         String p = "Цена: 606'000 грн $21'500";
         int r = p.indexOf("Цена: ");
         String r2 = p.substring(r + 6);
@@ -49,6 +44,19 @@ public class Test {
         System.out.println(prob);
 
         String z = "Двиг.: 2.0 Бензин (Автомат)";
+        int x = z.indexOf("Двиг.: ");
+        String z2 = z.substring(x + 7);
+        int n = z2.indexOf(" ");
+        String eng = z2.substring(0, n);
+        System.out.println(eng);
+
+        z2 = z2.substring(eng.length() + 1);
+        String z3 = z2.substring(0, z2.indexOf(" "));
+        System.out.println(z3);
+        int q = z2.indexOf("(");
+        int b = z2.indexOf(")");
+        String z4 = z2.substring(q + 1, b);
+        System.out.println(z4);
 
     }
 }

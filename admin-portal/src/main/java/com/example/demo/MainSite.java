@@ -29,14 +29,17 @@ public class MainSite {
         List<WebElement> prices = driver.findElementsByCssSelector(".rst-ocb-i-d-l-i");
 
         int k = 0;
+        int o = 1;
+        int u = 2;
         try {
 
             for (int f = 0; f < 30; f++) {
                 for (int i = 0; i < pictures.size(); i++) {
 
-                    String s = pictures.get(i).getAttribute("src");
+                    System.out.println(pictures.get(i).getAttribute("src"));
                     System.out.println(urles.get(i).getAttribute("href"));
-//                    System.out.println(models.get(i).getText());
+                    System.out.println(models.get(i).getText());
+                    String s = pictures.get(i).getAttribute("src");
                     int iz = s.indexOf("oldcars/");
 
                     String s2 = s.substring(iz + 8);
@@ -49,35 +52,58 @@ public class MainSite {
                     s2 = s2.substring(0, s2.indexOf('/'));
                     System.out.println(s2);
 
-                    for (int j = 0; j < 3; j++) {
-//                        String p = prices.get(k).getText();
-//                        System.out.println("FFFF " + p);
-//                        int r = p.indexOf("Цена: ");
-//                        String r2 = p.substring(r + 6);
-//                        int c = r2.indexOf("грн");
-//
-//                        String price = r2.substring(0, c);
-//                        price = price.replaceAll("'", "");
-//                        System.out.println(price);
+//                        System.out.println(prices.get(i).getText());
+//                        System.out.println(prices.get(1).getText());
+//                        System.out.println(prices.get(2).getText());
 
-//
-//                        String y = prices.get(k).getText();
-//                        int g = y.indexOf("Год: ");
-//                        int l = y.indexOf("(");
-//                        int d = y.indexOf("-");
-//                        String g2 = y.substring(g + 5);
-//                        int t = g2.indexOf(",");
-//
-//                        String year = g2.substring(0, t);
-//                        String prob = y.substring(l + 1, d);
-//                        System.out.println(year);
-//                        System.out.println(prob);
 
-                        System.out.println(prices.get(k).getText());
-                        k++;
-                    }
+//                    for (int j = 0; j < 3; j++) {
+
+//                        System.out.println(prices.get(k).getText());
+//
+//
+                    String p = prices.get(k).getText();
+                    int r = p.indexOf("Цена: ");
+                    String r2 = p.substring(r + 6);
+                    int c = r2.indexOf("грн");
+                    String price = r2.substring(0, c);
+                    price = price.replaceAll("'", "");
+                    System.out.println(price);
+
+
+                    String y = prices.get(o).getText();
+                    int g = y.indexOf("Год: ");
+                    int l = y.indexOf("(");
+                    int d = y.indexOf("-");
+                    String g2 = y.substring(g + 5);
+                    int t = g2.indexOf(",");
+                    String year = g2.substring(0, t);
+                    String prob = y.substring(l + 1, d);
+                    System.out.println(year);
+                    System.out.println(prob);
+
+
+                    String z = prices.get(u).getText();
+                    int w = z.indexOf("Двиг.: ");
+                    String z2 = z.substring(w + 7);
+                    int n = z2.indexOf(" ");
+                    String eng = z2.substring(0, n);
+                    System.out.println(eng);
+                    z2 = z2.substring(eng.length() + 1);
+                    String z3 = z2.substring(0, z2.indexOf(" "));
+                    System.out.println(z3);
+                    int q = z2.indexOf("(");
+                    int b = z2.indexOf(")");
+                    String z4 = z2.substring(q + 1, b);
+                    System.out.println(z4);
+//
+                    k = k + 3;
+                    o = o + 3;
+                    u = u + 3;
+
+//                    }
                     System.out.println();
-                    k = 0;
+//                    k = 0;
                 }
 //                new WebDriverWait(driver, 10).ignoring(StaleElementReferenceException.class);
 
@@ -87,19 +113,20 @@ public class MainSite {
                 }
 
                 nextPage.click();
+
                 nextPages = driver.findElementsByCssSelector("ul.pagination a");
                 models = driver.findElementsByCssSelector(".rst-ocb-i-h");
                 urles = driver.findElementsByCssSelector(".rst-ocb-i-a");
                 pictures = driver.findElementsByCssSelector(".rst-ocb-i-i");
                 prices = driver.findElementsByCssSelector(".rst-ocb-i-d-l-i");
+                k = 0;
+                o = 1;
+                u = 2;
+
             }
 //        } catch (StaleElementReferenceException e) {
         } catch (Exception ex) {
             System.out.println("Исключение: " + ex);
         }
-
-//        } finally {
-//            driver.close();
-//        }
     }
 }
