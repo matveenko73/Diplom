@@ -39,19 +39,17 @@ public class MainSite {
 
         try {
 
-            for (int f = 0; f < 30; f++) {
+            for (int f = 0; f < 17500; f++) {
                 for (int i = 0; i < pictures.size(); i++) {
 
                     System.out.println(pictures.get(i).getAttribute("src"));
                     System.out.println(urles.get(i).getAttribute("href"));
-//                    System.out.println(models.get(i).getText());
-
                     System.out.println(region.get(re).getText());
                     System.out.println(region.get(un).getText());
 
 
 
-                    String s = pictures.get(i).getAttribute("src");
+                    String s = urles.get(i).getAttribute("href");
                     int iz = s.indexOf("oldcars/");
                     String s2 = s.substring(iz + 8);
                     int x = s2.indexOf("/");
@@ -90,9 +88,12 @@ public class MainSite {
                     int d = y.indexOf("-");
                     String g2 = y.substring(g + 5);
                     int t = g2.indexOf(",");
-                    String year = g2.substring(0, t);
-                    String mileage = y.substring(l + 1, d);
+                    String yearF = g2.substring(0, t);
+                    String mileageF = y.substring(l + 1, d);
+                    Integer year = Integer.parseInt(yearF);
                     System.out.println(year);
+                    mileageF = mileageF.replaceAll(" ", "");
+                    Integer mileage = Integer.parseInt(mileageF);
                     System.out.println(mileage);
 
 
@@ -101,7 +102,9 @@ public class MainSite {
                     String z2 = z.substring(w + 7);
                     int n = z2.indexOf(" ");
                     String engine = z2.substring(0, n);
+                    engine = engine.replaceAll("i", "");
                     System.out.println(engine);
+
                     z2 = z2.substring(engine.length() + 1);
                     String fuel = z2.substring(0, z2.indexOf(" "));
                     System.out.println(fuel);
@@ -113,8 +116,8 @@ public class MainSite {
                     k = k + 3;
                     o = o + 3;
                     u = u + 3;
-                    re = re +6;
-                    un = un +6;
+                    re = re + 6;
+                    un = un + 6;
 
                     System.out.println();
                 }
@@ -131,7 +134,6 @@ public class MainSite {
                 driver.get(str+pageNomber);
 
 
-//                nextPages = driver.findElementsByCssSelector("ul.pagination a");
                 models = driver.findElementsByCssSelector(".rst-ocb-i-h");
                 urles = driver.findElementsByCssSelector(".rst-ocb-i-a");
                 pictures = driver.findElementsByCssSelector(".rst-ocb-i-i");

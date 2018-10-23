@@ -7,20 +7,20 @@ public class Test {
 //        Год: 2012, (93000 - пробег)
 //        Двиг.: 2.0 Бензин (Автомат)
 
-//        String s = "http://img1.rstcars.com/oldcars/mitsubishi/eclipse/middle/8720292-2.jpg";
-//        int i = s.indexOf("oldcars/");
-//
-//        String s2 = s.substring(i + 8);
-//        int j = s2.indexOf("/");
+        String s = "http://rst.ua/oldcars/mercedes/vito/mercedes_vito_8938560.html";
+        int i = s.indexOf("oldcars/");
+
+        String s2 = s.substring(i + 8);
+        int j = s2.indexOf("/");
 //        System.out.println(s2);
-//
-//        String car = s2.substring(0, j);
-//        System.out.println(car);
-//
-//        s2 = s2.substring(car.length() + 1);
-//        s2 = s2.substring(0, s2.indexOf('/'));
-//        System.out.println(s2);
-//
+
+        String car = s2.substring(0, j);
+        System.out.println(car);
+
+        s2 = s2.substring(car.length() + 1);
+        s2 = s2.substring(0, s2.indexOf('/'));
+        System.out.println(s2);
+
         String p = "Цена: 606'000 грн $21'500";
         int r = p.indexOf("Цена: ");
         String r2 = p.substring(r + 6);
