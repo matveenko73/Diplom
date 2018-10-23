@@ -74,7 +74,7 @@ public class RstTask extends Thread {
                     } else {
 
                         price = r2.substring(0, c);
-                        price = price.replaceAll("'", "");
+                        price = price.replaceAll("'", ".");
                     }
                     System.out.println(price);
 

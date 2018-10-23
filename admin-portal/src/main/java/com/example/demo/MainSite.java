@@ -72,12 +72,11 @@ public class MainSite {
                     int c = r2.indexOf(" ");
                     String price;
                     if (c == -1) {
-
                         price = "Договорная";
                     } else {
 
                         price = r2.substring(0, c);
-                        price = price.replaceAll("'", "");
+                        price = price.replaceAll("'", ".");
                     }
                     System.out.println(price);
 

@@ -2,41 +2,84 @@ package com.example.demo;
 
 public class Test {
     public static void main(String[] args) {
-//        продам MITSUBISHI Eclipse
-//        Цена: 606'000 грн $21'500
-//        Год: 2012, (93000 - пробег)
-//        Двиг.: 2.0 Бензин (Автомат)
 
-        String s = "http://rst.ua/oldcars/mercedes/vito/mercedes_vito_8938560.html";
-        int i = s.indexOf("oldcars/");
+//        Kia Niro 1.6 DCT (141 л.с.) Prestige 2016
+//        771 750 грн
+//        без пробега
+//        Киев
+//        Бензин/Электричество, 1.6 л.
+//        Автомат
 
-        String s2 = s.substring(i + 8);
-        int j = s2.indexOf("/");
+
+
+//        String s = "1 235 000 грн";
+//        int i = s.indexOf("грн");
+//        String price = s.substring(0, i - 1);
+//        price = price.replaceAll(" ",".");
+//        System.out.println(price);
+//
+//
+//        String p = "123 тыс км";
+//        int v = p.indexOf("тыс");
+//        String mileageF;
+//        Integer mileage;
+//        if (v == -1) {
+//            mileageF = "0";
+//            mileage = Integer.parseInt(mileageF);
+//        } else {
+//            mileageF = p.substring(0, v - 1);
+//            mileage = Integer.parseInt(mileageF);
+//            mileage = mileage * 1000;
+//        }
+//        System.out.println(mileage);
+
+//        String z = "Бензин/Электричество, 1.6 л.";
+//        int c = z.indexOf(",");
+//        String fuel = z.substring(0, c);
+//        if (c == 20) {
+//            fuel = "Гибрид";
+//        }
+//        System.out.println(fuel);
+//
+//        int h = z.indexOf("л.");
+//        String eng = z.substring(c + 1, h);
+//        eng = eng.replaceAll(" ", "");
+//        System.out.println(eng);
+
+
+
+
+
+//        String s = "http://rst.ua/oldcars/mercedes/vito/mercedes_vito_8938560.html";
+//        int i = s.indexOf("oldcars/");
+//
+//        String s2 = s.substring(i + 8);
+//        int j = s2.indexOf("/");
+////        System.out.println(s2);
+//
+//        String car = s2.substring(0, j);
+//        System.out.println(car);
+//
+//        s2 = s2.substring(car.length() + 1);
+//        s2 = s2.substring(0, s2.indexOf('/'));
 //        System.out.println(s2);
-
-        String car = s2.substring(0, j);
-        System.out.println(car);
-
-        s2 = s2.substring(car.length() + 1);
-        s2 = s2.substring(0, s2.indexOf('/'));
-        System.out.println(s2);
-
-        String p = "Цена: 606'000 грн $21'500";
-        int r = p.indexOf("Цена: ");
-        String r2 = p.substring(r + 6);
-        int c = r2.indexOf(" ");
-        String price;
-
-        if (c == -1) {
-
-            price = "Договорная";
-        } else {
-
-            price = r2.substring(0, c);
-            price = price.replaceAll("'", "");
-        }
-
-        System.out.println(price);
+//
+//        String p = "Цена: 606'000 грн $21'500";
+//        int r = p.indexOf("Цена: ");
+//        String r2 = p.substring(r + 6);
+//        int c = r2.indexOf(" ");
+//        String price;
+//
+//        if (c == -1) {
+//
+//            price = "Договорная";
+//        } else {
+//
+//            price = r2.substring(0, c);
+//            price = price.replaceAll("'", "");
+//        }
+//
+//        System.out.println(price);
 //
 //
 //        String y = "Год: 2012, (93000 - пробег)";

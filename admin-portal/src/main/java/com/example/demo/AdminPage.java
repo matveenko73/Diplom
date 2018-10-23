@@ -12,10 +12,17 @@ public class AdminPage {
     @Inject
     private CarRepository carRepository;
 
-    public void run() {
+    public void runRST() {
         new RstTask((cars) -> {
             carRepository.saveAll(cars);
             System.out.println("Cars saved");
         }).run();
     }
+    public void runAutoRia() {
+        new AutoRiaTask((cars) -> {
+            carRepository.saveAll(cars);
+            System.out.println("Cars saved");
+        }).run();
+    }
+
 }
