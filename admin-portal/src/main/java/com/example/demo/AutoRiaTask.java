@@ -9,6 +9,10 @@ import java.util.function.Consumer;
 
 public class AutoRiaTask extends Thread {
 
+    static {
+        System.setProperty("webdriver.gecko.driver",
+                "C:\\Users\\Андрей\\Downloads\\geckodriver.exe");}
+
     private List<Car> result = new ArrayList<>();
     private Consumer<List<Car>> resultListener;
 

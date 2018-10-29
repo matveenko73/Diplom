@@ -1,7 +1,7 @@
 package com.example.demo;
 
-public class Test {
-    public static void main(String[] args) {
+//public class Test {
+//    public static void main(String[] args) {
 
 //        Kia Niro 1.6 DCT (141 л.с.) Prestige 2016
 //        771 750 грн
@@ -109,6 +109,6 @@ public class Test {
 //        String z4 = z2.substring(q + 1, b);
 //        System.out.println(z4);
 
-
-    }
-}
+//
+//    }
+//}
