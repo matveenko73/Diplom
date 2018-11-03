@@ -45,12 +45,14 @@ header {
 }
 
 .backgroundIMG {
-    background: url(../img/2.jpg) no-repeat center top / cover;
-    height: 500px;
-    display: block;
+    background-color: black;
+    /*background: url(../img/2.jpg) no-repeat center top / cover;*/
+    /*height: 500px;*/
+    /*display: block;*/
 }
 
 .search-menu {
+    margin-top: 150px;
     background-color: #F5F5F5;
     width: 1000px;
     height: 250px;
