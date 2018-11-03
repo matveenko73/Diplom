@@ -1,28 +1,147 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+<!DOCTYPE html>
+<html lang="en" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:p="http://primefaces.org/ui">
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="css/test.css"/>
+</head>
 
-<h:head>
-    <title>Test</title>
-</h:head>
+<body>
+<header>
+    <div class="container">
+        <div class="heading clearfix">
+            <nav>
+                <ul class="menu">
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Поиск</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Вход</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+<section>
+    <div class="midle">
+        <div class="img">
+            <div class="container">
+                <div class="search-menu">
+                    <div class="select_box_1">
+                        <select class="select_1">
+                            <option value="0">Марка</option>
+                            <option value="1">Audi</option>
+                            <option value="2">Mercedes-Benz</option>
+                            <option value="3">BMW</option>
+                            <option value="4">Lexus</option>
+                            <option value="5">Lincoln</option>
+                            <option value="6">Ford</option>
+                            <option value="7">Fiat</option>
+                            <option value="8">Dodge</option>
+                        </select>
+                    </div>
+                    <div class="select_box_1">
+                        <select class="select_1">
+                            <option value="0">Модель</option>
+                            <option value="1">R8</option>
+                            <option value="2">S500</option>
+                            <option value="3">540i</option>
+                            <option value="4">RX300</option>
+                            <option value="5">Navigator</option>
+                            <option value="6">Taurus</option>
+                            <option value="7">Doblo</option>
+                            <option value="8">Viper</option>
+                        </select>
+                    </div>
+                    <div class="select_box_1">
+                        <select class="select_1">
+                            <option value="0">Регион</option>
+                            <option value="1">Kiyiv</option>
+                            <option value="2">Lviv</option>
+                            <option value="3">Kharkiv</option>
+                            <option value="4">Odesa</option>
+                            <option value="5">Donetsk</option>
+                        </select>
+                    </div>
+                    <div class="select_box_2">
+                        <select class="select_2">
+                            <option value="0">От</option>
+                            <option value="1">2013</option>
+                            <option value="2">2012</option>
+                            <option value="3">2011</option>
+                            <option value="4">2010</option>
+                            <option value="5">2009</option>
+                            <option value="6">2008</option>
+                            <option value="7">2007</option>
+                            <option value="8">2006</option>
+                        </select>
+                    </div>
+                    <div class="select_box_2">
+                        <select class="select_2">
+                            <option value="0">До</option>
+                            <option value="1">2013</option>
+                            <option value="2">2012</option>
+                            <option value="3">2011</option>
+                            <option value="4">2010</option>
+                            <option value="5">2009</option>
+                            <option value="6">2008</option>
+                            <option value="7">2007</option>
+                            <option value="8">2006</option>
+                        </select>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="price">
+                        <div class="select_box_3">
+                            <select class="select_3">
+                                <option value="0">От</option>
+                                <option value="1">1000</option>
+                                <option value="2">2000</option>
+                                <option value="3">3000</option>
+                                <option value="4">4000</option>
+                                <option value="5">5000</option>
+                                <option value="6">6000</option>
+                                <option value="7">7000</option>
+                                <option value="8">8000</option>
+                            </select>
+                        </div>
+                        <div class="select_box_3">
+                            <select class="select_3">
+                                <option value="0">До</option>
+                                <option value="1">1000</option>
+                                <option value="2">2000</option>
+                                <option value="3">3000</option>
+                                <option value="4">4000</option>
+                                <option value="5">5000</option>
+                                <option value="6">6000</option>
+                                <option value="7">7000</option>
+                                <option value="8">8000</option>
+                            </select>
+                            <div class="clear"></div>
+                        </div>
+                        <ul class="search">
+                            <li><a href="#">Поиск</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <p:dataGrid id="table" var="car" value="#{carPage.cars}" paginator="true" rows="6" columns="2">
+            <h:panelGrid columns="2" cellspacing="10">
+                <p:graphicImage value="#{car.pictures}" width="230px" height="200px"/>
+                <h:panelGrid columns="1" cellspacing="20">
+                    <p:outputLabel value="#{car.info}"/>
+                    <p:outputLabel value="#{car.productionYear} #{car.region}"/>
+                    <p:outputLabel value="#{car.price} грн"/>
+                    <p:link target="_blank" href="#{car.urles}" value="cсылка на первоисточник"/>
+                </h:panelGrid>
+            </h:panelGrid>
 
-<h:body>
-    <h:form>
-        <p:outputLabel value="Name: "/>
-        <p:inputText value="#{person.name}"/>
-        <p:commandButton ajax="false" value="Go"/>
-        <br/>
-        <p:commandLink ajax="false" value="Go"/>
-    </h:form>
-    <p:outputLabel value="#{person.name}"/>
-    <br/>
-    <p:outputLabel value="#{person.surname}"/>
-    <br/>
-    <p:outputLabel value="#{person.coutn}"/>
-</h:body>
+        </p:dataGrid>
+    </div>
+</footer>
+
+</body>
 </html>

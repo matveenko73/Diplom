@@ -32,6 +32,7 @@ public class RstTask extends Thread {
         List<WebElement> pictures = driver.findElementsByCssSelector(".rst-ocb-i-i");
         List<WebElement> prices = driver.findElementsByCssSelector(".rst-ocb-i-d-l-i");
         List<WebElement> region = driver.findElementsByCssSelector(".rst-ocb-i-d-l-i-s");
+        List<WebElement> info = driver.findElementsByCssSelector(".rst-ocb-i-h");
 
         int k = 0;
         int o = 1;
@@ -42,7 +43,7 @@ public class RstTask extends Thread {
 
         try {
 
-            for (int f = 0; f < 20; f++) {
+            for (int f = 0; f < 2; f++) {
                 for (int i = 0; i < pictures.size(); i++) {
 
                     System.out.println(pictures.get(i).getAttribute("src"));
@@ -50,6 +51,9 @@ public class RstTask extends Thread {
                     System.out.println(region.get(re).getText());
                     System.out.println(region.get(un).getText());
 
+                    String rs = info.get(i).getText();
+                    String inform = rs.substring(7, rs.length());
+                    System.out.println(inform);
 
                     String s = urles.get(i).getAttribute("href");
                     int iz = s.indexOf("oldcars/");
@@ -123,6 +127,7 @@ public class RstTask extends Thread {
                     car.setState(region.get(un).getText());
                     car.setTransmission(transmission);
                     car.setMileage(mileage);
+                    car.setInfo(inform);
 
                     result.add(car);
 
@@ -142,6 +147,7 @@ public class RstTask extends Thread {
                 pictures = driver.findElementsByCssSelector(".rst-ocb-i-i");
                 prices = driver.findElementsByCssSelector(".rst-ocb-i-d-l-i");
                 region = driver.findElementsByCssSelector(".rst-ocb-i-d-l-i-s");
+                info = driver.findElementsByCssSelector(".rst-ocb-i-h");
 
                 k = 0;
                 o = 1;

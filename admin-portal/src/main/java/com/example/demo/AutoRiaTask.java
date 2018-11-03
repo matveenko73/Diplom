@@ -43,14 +43,20 @@ public class AutoRiaTask extends Thread {
 
 
         try {
-            for (int j = 0; j < 5; j++) {
+            for (int j = 0; j < 2; j++) {
 
                 for (int i = 0; i < urles.size(); i++) {
 
                     Car car = new Car();
                     System.out.println(pictures.get(i).getAttribute("src"));
                     System.out.println(urles.get(i).getAttribute("href"));
-                    System.out.println(models.get(i).getText());
+
+                    String ab = models.get(i).getText();
+                    String years = ab.substring(ab.length() - 4, ab.length());
+                    String inform = ab.substring(0, ab.length() - 5);
+                    Integer year = Integer.parseInt(years);
+                    System.out.println(year);
+                    System.out.println(inform);
 
                     String s = prices.get(p).getText();
                     int q = s.indexOf("грн");
@@ -103,11 +109,12 @@ public class AutoRiaTask extends Thread {
 //                    car.setModel(model);
                     car.setRegion(info.get(reg).getText());
                     car.setPrice(price);
-//                    car.setProductionYear(year);
+                    car.setProductionYear(year);
                     car.setFuel(fuel);
 //                    car.setState(region.get(un).getText());
                     car.setTransmission(info.get(transm).getText());
                     car.setMileage(mileage);
+                    car.setInfo(inform);
 
                     result.add(car);
 

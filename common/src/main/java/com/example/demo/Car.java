@@ -9,6 +9,7 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long id;
+    private String info;
     private String pictures;
     private String urles;
     private String brand;
@@ -142,5 +143,13 @@ public class Car {
 
     public void setMileage(Integer mileage) {
         this.mileage = mileage;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 }

@@ -17,6 +17,7 @@ public class CarPage {
     private CarRepository carRepository;
 
     private Long id;
+    private String info;
     private String pictures;
     private String urles;
     private String brand;
@@ -165,5 +166,13 @@ public class CarPage {
 
     public void setCars(List<Car> cars) {
         this.cars = cars;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
     }
 }

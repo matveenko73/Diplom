@@ -12,7 +12,7 @@ public class AutoRia {
 
         FirefoxDriver driver = new FirefoxDriver();
         String str = "https://auto.ria.com/legkovie/?page=";
-        driver.get("https://auto.ria.com/legkovie/?page=1");
+        driver.get("https://auto.ria.com/search/?categories.main.id=1&region.id[0]=10&brand.id[0]=147&model.id[0]=1460");
         int nextPage = 1;
 
 
@@ -30,12 +30,18 @@ public class AutoRia {
 
 
         try {
-            for (int j = 0; j < 20; j++) {
+            for (int j = 0; j < 2; j++) {
 
                 for (int i = 0; i < urles.size(); i++) {
                     System.out.println(pictures.get(i).getAttribute("src"));
                     System.out.println(urles.get(i).getAttribute("href"));
                     System.out.println(models.get(i).getText());
+
+                    String ab = models.get(i).getText();
+                    String year = ab.substring(ab.length() - 4, ab.length());
+                    String inform = ab.substring(0, ab.length() - 5);
+                    System.out.println(year);
+                    System.out.println(inform);
 
                     String s = prices.get(p).getText();
                     int q = s.indexOf("грн");

@@ -1,0 +1,181 @@
+body {
+    background-color: #F5F5F5;
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix:after {
+	content: '';
+	display: table;
+	width: 100%;
+	clear: both;
+
+}
+
+header {
+    height: 50px;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.heading {
+    float: right;
+    margin-top: 20px;
+}
+
+.menu {
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.menu li {
+    float: left;
+    display: block;
+    margin-right: 30px;
+}
+
+.menu a {
+    color: #292929;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    transition: 0.5s all;
+}
+
+.img {
+	background: url(../img/2.jpg) no-repeat center top / cover;
+	height: 500px;
+}
+
+.search-menu {
+	background: url(../img/test.jpg) no-repeat center top / cover;;
+	height: 180px;
+    width: 700px;
+	display: block;
+    padding: 15px 0px 40px 50px ;
+    transform: translate(125px, 340px);
+}
+
+.search-menu li {
+    float: right;
+    display: block;
+    margin-top: 10px;
+    margin-right: 75px;
+}
+
+.search-menu a {
+    color: #292929;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.5s all;
+}
+
+.midle {
+	background-color: #F5F5F5;
+	height: 600px;
+	position: relative;
+}
+
+.select_box_1 select {
+    background-color: #F5F5F5;
+    color: #292929;
+    border: none;
+    font-size: 20px; 
+    width: 200px;   
+}
+
+.select_box_1 {
+   
+   width: 180px;
+   height: 25px;
+   border: 1px solid #111;
+   overflow: hidden;
+   background: #F5F5F5;
+   float: left;
+   margin-right: 50px;
+   margin-top: 20px;
+
+}
+
+.select_box_2 select {
+    background-color: #F5F5F5;
+    color: #292929;
+    border: none;
+    font-size: 20px; 
+    width: 120px;   
+}
+
+.select_box_2 label {
+    color: #292929;
+    font-size: 20px;
+}
+
+.select_box_2 {
+    width: 100px;
+    height: 24px;
+    border: 1px solid #111;
+    overflow: hidden;
+    background: #fff;
+    float: left;
+    margin-right: 80px;
+    margin-top: 20px;
+    margin-left: 312px;
+}
+
+.price {
+    margin-top: 67px;
+}
+
+.select_box_3 select {
+    background-color: #F5F5F5;
+    color: #292929;
+    border: none;
+    font-size: 20px; 
+    width: 120px; 
+}
+
+.select_box_3 {
+    width: 100px;
+    height: 24px;
+    border: 1px solid #111;
+    overflow: hidden;
+    background: #fff;
+    margin-right: 80px;
+    margin-top: 20px;
+    margin-left: 544px;
+}
+
+.clear {
+    clear:both;
+}
+
+table img {
+    height: 160px;
+    width: 230px;
+}
+
+.table_2 {
+    float: left;
+}
+
+table {
+    width: 250px;
+    float: right;
+}
+
+.inside td {
+    font-size: 18px;
+    color: #292929;
+}
+
+table a {
+    text-decoration: none;
+    transition: 0.5s all;
+}

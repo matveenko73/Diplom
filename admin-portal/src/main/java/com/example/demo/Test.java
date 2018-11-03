@@ -1,7 +1,7 @@
 package com.example.demo;
 
-//public class Test {
-//    public static void main(String[] args) {
+public class Test {
+    public static void main(String[] args) {
 
 //        Kia Niro 1.6 DCT (141 л.с.) Prestige 2016
 //        771 750 грн
@@ -9,6 +9,20 @@ package com.example.demo;
 //        Киев
 //        Бензин/Электричество, 1.6 л.
 //        Автомат
+//        Volkswagen Passat B8 TDI 4MOTION MAXI-FUL 2015
+
+        String rs = "продам RENAULT Megane";
+        String inform = rs.substring(7, rs.length());
+        System.out.println(inform);
+        System.out.println(rs.length());
+
+
+//        String ab ="Volkswagen Passat 1992";
+//        String year = ab.substring(ab.length() - 4, ab.length());
+//        String info = ab.substring(0, ab.length() - 5);
+//        System.out.println(year);
+//        System.out.println(info);
+//        System.out.println(ab.length());
 
 
 
@@ -32,7 +46,7 @@ package com.example.demo;
 //            mileage = mileage * 1000;
 //        }
 //        System.out.println(mileage);
-
+//
 //        String z = "Бензин/Электричество, 1.6 л.";
 //        int c = z.indexOf(",");
 //        String fuel = z.substring(0, c);
@@ -45,11 +59,11 @@ package com.example.demo;
 //        String eng = z.substring(c + 1, h);
 //        eng = eng.replaceAll(" ", "");
 //        System.out.println(eng);
-
-
-
-
-
+//
+//
+//
+//
+//
 //        String s = "http://rst.ua/oldcars/mercedes/vito/mercedes_vito_8938560.html";
 //        int i = s.indexOf("oldcars/");
 //
@@ -109,6 +123,6 @@ package com.example.demo;
 //        String z4 = z2.substring(q + 1, b);
 //        System.out.println(z4);
 
-//
-//    }
-//}
+
+    }
+}
