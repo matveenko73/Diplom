@@ -4,11 +4,13 @@ import com.example.demo.*;
 import com.example.demo.repositories.CarRepository;
 
 import javax.annotation.PostConstruct;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
 
 @Named
+@ViewScoped
 public class CarPage {
 
     @Inject
@@ -34,7 +36,7 @@ public class CarPage {
 
     @PostConstruct
     public void carInit() {
-        cars = carRepository.findAll();
+        cars = carRepository.findAllByOrderByIdDesc();
     }
 
     public Long getId() {
