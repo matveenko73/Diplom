@@ -95,21 +95,19 @@
                         </div>
                         <div class="price">
                             <div class="select_box_3">
-                                <select class="select_3">
-                                    <option value="0">От</option>
-                                    <option value="1">1000</option>
-                                    <option value="2">2000</option>
-                                    <option value="3">3000</option>
-                                    <option value="4">4000</option>
-                                    <option value="5">5000</option>
-                                    <option value="6">6000</option>
-                                    <option value="7">7000</option>
-                                    <option value="8">8000</option>
-                                </select>
+                                <p:selectOneMenu value="#{carPage.filterYearAfter}">
+                                    <f:selectItem itemLabel="От" itemValue=""/>
+                                    <f:selectItem itemLabel="от 1980" itemValue="1980"/>
+                                    <f:selectItem itemLabel="от 1993" itemValue="1993"/>
+                                    <f:selectItem itemLabel="от 2001" itemValue="2001"/>
+                                    <f:selectItem itemLabel="от 2006" itemValue="2006"/>
+                                    <f:selectItem itemLabel="от 2011" itemValue="2011"/>
+                                    <f:selectItem itemLabel="от 2016" itemValue="2016"/>
+                                </p:selectOneMenu>
                             </div>
                             <div class="select_box_3">
                                 <p:selectOneMenu value="#{carPage.filterYearBefore}">
-                                    <f:selectItem itemLabel="" itemValue=""/>
+                                    <f:selectItem itemLabel="До" itemValue=""/>
                                     <f:selectItem itemLabel="до 1992" itemValue="1992"/>
                                     <f:selectItem itemLabel="до 1995" itemValue="1995"/>
                                     <f:selectItem itemLabel="до 2000" itemValue="2000"/>

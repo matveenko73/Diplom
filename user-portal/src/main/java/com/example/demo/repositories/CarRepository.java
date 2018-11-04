@@ -9,4 +9,7 @@ public interface CarRepository extends JpaRepository<Car, Long> {
     List<Car> findAllByOrderByIdDesc();
 
     List<Car> findByProductionYearLessThanEqual(Integer productionYear);
+    List<Car> findByProductionYearGreaterThanEqual(Integer productionYear);
+    List<Car> findByProductionYearGreaterThanEqualAndProductionYearLessThanEqual(Integer filterYearAfter,
+                                                                                 Integer filterYearBefore);
 }

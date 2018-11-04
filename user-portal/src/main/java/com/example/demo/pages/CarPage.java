@@ -17,6 +17,7 @@ public class CarPage {
     private CarRepository carRepository;
 
     private String filterYearBefore;
+    private String filterYearAfter;
     private Long id;
     private String info;
     private String pictures;
@@ -177,6 +178,14 @@ public class CarPage {
         this.filterYearBefore = filterYearBefore;
     }
 
+    public String getFilterYearAfter() {
+        return filterYearAfter;
+    }
+
+    public void setFilterYearAfter(String filterYearAfter) {
+        this.filterYearAfter = filterYearAfter;
+    }
+
     public String getInfo() {
         return info;
     }
@@ -186,9 +195,23 @@ public class CarPage {
     }
 
     public void applyFilter() {
+        if (filterYearBefore != null && filterYearBefore.trim().length() > 0 &&
+                filterYearAfter != null && filterYearAfter.trim().length() > 0) {
+            cars = carRepository.findByProductionYearGreaterThanEqualAndProductionYearLessThanEqual(
+                    Integer.parseInt(filterYearAfter), Integer.parseInt(filterYearBefore));
+                    return;
+        }
         if (filterYearBefore != null && filterYearBefore.trim().length() > 0) {
             cars = carRepository.findByProductionYearLessThanEqual(Integer.parseInt(filterYearBefore));
+            return;
         }
+
+        if (filterYearAfter != null && filterYearAfter.trim().length() > 0) {
+            cars = carRepository.findByProductionYearGreaterThanEqual(Integer.parseInt(filterYearAfter));
+            return;
+        }
+
+
     }
 }
 
