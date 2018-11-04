@@ -94,14 +94,13 @@ header {
 .select_box_1 {
    
    width: 180px;
-   height: 25px;
-   border: 1px solid #111;
+   height: 28px;
+   border: none;
    overflow: hidden;
    background: #F5F5F5;
    float: left;
    margin-right: 50px;
    margin-top: 20px;
-
 }
 
 .select_box_2 select {
@@ -143,10 +142,10 @@ header {
 
 .select_box_3 {
     width: 100px;
-    height: 24px;
-    border: 1px solid #111;
+    height: 28px;
+    border: none;
     overflow: hidden;
-    background: #fff;
+    background: #F5F5F5;
     margin-right: 80px;
     margin-top: 20px;
     margin-left: 544px;
@@ -178,4 +177,12 @@ table {
 table a {
     text-decoration: none;
     transition: 0.5s all;
+}
+
+#carTable_paginator_top {
+    display: none;
+}
+
+.ui-paginator-pages {
+    margin: 50px auto 50px auto;
 }

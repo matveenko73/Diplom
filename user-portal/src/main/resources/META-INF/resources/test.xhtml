@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core">
+      xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:background-color="http://java.sun.com/jsf/composite">
 <h:head>
     <title>Home Page</title>
     <link rel="stylesheet" href="css/test.css"/>
@@ -31,7 +32,8 @@
 
                     <div class="search-menu">
                         <div class="select_box_1">
-                            <p:selectOneMenu value="#{carPage.filterBrand}">
+                            <p:selectOneMenu value="#{carPage.filterBrand}"
+                                             style="width: 150px;">
                                 <f:selectItem itemLabel="Марка" itemValue=""/>
                                 <f:selectItem itemLabel="BMW" itemValue="BMW"/>
                                 <f:selectItem itemLabel="Ford" itemValue="Ford"/>
@@ -42,17 +44,12 @@
                             </p:selectOneMenu>
                         </div>
                         <div class="select_box_1">
-                            <p:inputText placeholder="Модель" value="#{carPage.filterModel}"/>
+                            <p:inputText style="width: 170px;"
+                                    placeholder="Модель" value="#{carPage.filterModel}"/>
                         </div>
                         <div class="select_box_1">
-                            <select class="select_1">
-                                <option value="0">Регион</option>
-                                <option value="1">Kiyiv</option>
-                                <option value="2">Lviv</option>
-                                <option value="3">Kharkiv</option>
-                                <option value="4">Odesa</option>
-                                <option value="5">Donetsk</option>
-                            </select>
+                            <p:inputText style="width: 170px;"
+                                         placeholder="Регион" value="#{carPage.filterRegion}"/>
                         </div>
                         <div class="select_box_2">
                             <select class="select_2">
@@ -83,7 +80,8 @@
                         </div>
                         <div class="price">
                             <div class="select_box_3">
-                                <p:selectOneMenu value="#{carPage.filterYearAfter}">
+                                <p:selectOneMenu value="#{carPage.filterYearAfter}"
+                                                 style="width: 70px">
                                     <f:selectItem itemLabel="От" itemValue=""/>
                                     <f:selectItem itemLabel="от 1980" itemValue="1980"/>
                                     <f:selectItem itemLabel="от 1993" itemValue="1993"/>
@@ -94,7 +92,8 @@
                                 </p:selectOneMenu>
                             </div>
                             <div class="select_box_3">
-                                <p:selectOneMenu value="#{carPage.filterYearBefore}">
+                                <p:selectOneMenu value="#{carPage.filterYearBefore}"
+                                                 style="width: 70px">
                                     <f:selectItem itemLabel="До" itemValue=""/>
                                     <f:selectItem itemLabel="до 1992" itemValue="1992"/>
                                     <f:selectItem itemLabel="до 1995" itemValue="1995"/>
@@ -118,11 +117,13 @@
     </div>
 </section>
 <footer>
-    <div class="container">
-        <p:dataGrid id="carTable" var="car" value="#{carPage.cars}" paginator="true" rows="6" columns="2">
-            <h:panelGrid columns="2" cellspacing="10">
+    <!--<div class="container">-->
+        <p:dataGrid id="carTable" var="car" value="#{carPage.cars}" paginator="true" rows="6" columns="2"
+                    style="background-color: #F5F5F5;">
+            <h:panelGrid columns="2" cellspacing="10" style="margin: 5px 50px 0px auto;">
                 <p:graphicImage value="#{car.pictures}" width="230px" height="200px"/>
-                <h:panelGrid columns="1" cellspacing="20">
+                <h:panelGrid columns="1" cellspacing="8"
+                             style="font-size: 20px">
                     <p:outputLabel value="#{car.info}"/>
                     <p:outputLabel value="#{car.productionYear} #{car.region}"/>
                     <p:outputLabel value="#{car.price} грн"/>
@@ -132,7 +133,7 @@
             </h:panelGrid>
 
         </p:dataGrid>
-    </div>
+    <!--</div>-->
 </footer>
 
 </body>

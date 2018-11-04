@@ -15,4 +15,6 @@ public interface CarRepository extends JpaRepository<Car, Long> {
     List<Car> findByBrandLikeOrderByIdDesc(String brand);
     List<Car> findByModelLikeOrderByIdDesc(String model);
     List<Car> findByBrandLikeAndModelLikeOrderByIdDesc(String brand, String model);
+
+    List<Car> findByRegionLikeOrderByIdDesc(String region);
 }

@@ -16,6 +16,7 @@ public class CarPage {
     @Inject
     private CarRepository carRepository;
 
+    private String filterRegion;
     private String filterBrand;
     private String filterModel;
     private String filterYearBefore;
@@ -212,6 +213,14 @@ public class CarPage {
         this.info = info;
     }
 
+    public String getFilterRegion() {
+        return filterRegion;
+    }
+
+    public void setFilterRegion(String filterRegion) {
+        this.filterRegion = filterRegion;
+    }
+
     public void applyFilter() {
         if (filterBrand != null && filterBrand.trim().length() > 0 &&
                 filterModel != null && filterModel.trim().length() > 0) {
@@ -228,6 +237,11 @@ public class CarPage {
 
         if (filterModel != null && filterModel.trim().length() > 0) {
             cars = carRepository.findByModelLikeOrderByIdDesc("%" + filterModel.toLowerCase() + "%");
+            return;
+        }
+
+        if (filterRegion != null && filterRegion.trim().length() > 0) {
+            cars = carRepository.findByRegionLikeOrderByIdDesc("%" + filterRegion.toString() + "%");
             return;
         }
 
