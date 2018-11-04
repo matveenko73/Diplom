@@ -16,6 +16,8 @@ public class CarPage {
     @Inject
     private CarRepository carRepository;
 
+    private String filterBrand;
+    private String filterModel;
     private String filterYearBefore;
     private String filterYearAfter;
     private Long id;
@@ -186,6 +188,22 @@ public class CarPage {
         this.filterYearAfter = filterYearAfter;
     }
 
+    public String getFilterBrand() {
+        return filterBrand;
+    }
+
+    public void setFilterBrand(String filterBrand) {
+        this.filterBrand = filterBrand;
+    }
+
+    public String getFilterModel() {
+        return filterModel;
+    }
+
+    public void setFilterModel(String filterModel) {
+        this.filterModel = filterModel;
+    }
+
     public String getInfo() {
         return info;
     }
@@ -195,6 +213,24 @@ public class CarPage {
     }
 
     public void applyFilter() {
+        if (filterBrand != null && filterBrand.trim().length() > 0 &&
+                filterModel != null && filterModel.trim().length() > 0) {
+            cars = carRepository.findByBrandLikeAndModelLikeOrderByIdDesc(
+                    "%" + filterBrand.toLowerCase() + "%",
+                    "%" + filterModel.toLowerCase() + "%");
+            return;
+        }
+
+        if (filterBrand != null && filterBrand.trim().length() > 0) {
+            cars = carRepository.findByBrandLikeOrderByIdDesc("%" + filterBrand.toLowerCase() + "%");
+            return;
+        }
+
+        if (filterModel != null && filterModel.trim().length() > 0) {
+            cars = carRepository.findByModelLikeOrderByIdDesc("%" + filterModel.toLowerCase() + "%");
+            return;
+        }
+
         if (filterYearBefore != null && filterYearBefore.trim().length() > 0 &&
                 filterYearAfter != null && filterYearAfter.trim().length() > 0) {
             cars = carRepository.findByProductionYearGreaterThanEqualAndProductionYearLessThanEqualOrderByIdDesc(
@@ -210,8 +246,6 @@ public class CarPage {
             cars = carRepository.findByProductionYearGreaterThanEqualOrderByIdDesc(Integer.parseInt(filterYearAfter));
             return;
         }
-
-
     }
 }
 

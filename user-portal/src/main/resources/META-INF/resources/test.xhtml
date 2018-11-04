@@ -31,30 +31,18 @@
 
                     <div class="search-menu">
                         <div class="select_box_1">
-                            <select class="select_1">
-                                <option value="0">Марка</option>
-                                <option value="1">Audi</option>
-                                <option value="2">Mercedes-Benz</option>
-                                <option value="3">BMW</option>
-                                <option value="4">Lexus</option>
-                                <option value="5">Lincoln</option>
-                                <option value="6">Ford</option>
-                                <option value="7">Fiat</option>
-                                <option value="8">Dodge</option>
-                            </select>
+                            <p:selectOneMenu value="#{carPage.filterBrand}">
+                                <f:selectItem itemLabel="Марка" itemValue=""/>
+                                <f:selectItem itemLabel="BMW" itemValue="BMW"/>
+                                <f:selectItem itemLabel="Ford" itemValue="Ford"/>
+                                <f:selectItem itemLabel="Subaru" itemValue="Subaru"/>
+                                <f:selectItem itemLabel="Toyota" itemValue="Toyota"/>
+                                <f:selectItem itemLabel="Land Rover" itemValue="LandRover"/>
+                                <f:selectItem itemLabel="Mercedes-Benz" itemValue="Mercedes"/>
+                            </p:selectOneMenu>
                         </div>
                         <div class="select_box_1">
-                            <select class="select_1">
-                                <option value="0">Модель</option>
-                                <option value="1">R8</option>
-                                <option value="2">S500</option>
-                                <option value="3">540i</option>
-                                <option value="4">RX300</option>
-                                <option value="5">Navigator</option>
-                                <option value="6">Taurus</option>
-                                <option value="7">Doblo</option>
-                                <option value="8">Viper</option>
-                            </select>
+                            <p:inputText placeholder="Модель" value="#{carPage.filterModel}"/>
                         </div>
                         <div class="select_box_1">
                             <select class="select_1">
