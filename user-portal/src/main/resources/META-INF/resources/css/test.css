@@ -117,11 +117,11 @@ header {
 }
 
 .select_box_2 {
-    width: 100px;
-    height: 24px;
-    border: 1px solid #111;
+    width: 105px;
+    height: 28px;
+    border: none;
     overflow: hidden;
-    background: #fff;
+    background: #F5F5F5;
     float: left;
     margin-right: 80px;
     margin-top: 20px;
@@ -141,7 +141,7 @@ header {
 }
 
 .select_box_3 {
-    width: 100px;
+    width: 105px;
     height: 28px;
     border: none;
     overflow: hidden;

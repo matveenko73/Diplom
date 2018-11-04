@@ -52,36 +52,16 @@
                                          placeholder="Регион" value="#{carPage.filterRegion}"/>
                         </div>
                         <div class="select_box_2">
-                            <select class="select_2">
-                                <option value="0">От</option>
-                                <option value="1">2013</option>
-                                <option value="2">2012</option>
-                                <option value="3">2011</option>
-                                <option value="4">2010</option>
-                                <option value="5">2009</option>
-                                <option value="6">2008</option>
-                                <option value="7">2007</option>
-                                <option value="8">2006</option>
-                            </select>
+                            <p:inputText placeholder="От" style="width: 89px;" value="#{carPage.filterPriceAfter}"/>
                         </div>
                         <div class="select_box_2">
-                            <select class="select_2">
-                                <option value="0">До</option>
-                                <option value="1">2013</option>
-                                <option value="2">2012</option>
-                                <option value="3">2011</option>
-                                <option value="4">2010</option>
-                                <option value="5">2009</option>
-                                <option value="6">2008</option>
-                                <option value="7">2007</option>
-                                <option value="8">2006</option>
-                            </select>
+                            <p:inputText placeholder="До" style="width: 89px;" value="#{carPage.filterPriceBefore}"/>
                             <div class="clear"></div>
                         </div>
                         <div class="price">
                             <div class="select_box_3">
                                 <p:selectOneMenu value="#{carPage.filterYearAfter}"
-                                                 style="width: 70px">
+                                                 style="width: 69px">
                                     <f:selectItem itemLabel="От" itemValue=""/>
                                     <f:selectItem itemLabel="от 1980" itemValue="1980"/>
                                     <f:selectItem itemLabel="от 1993" itemValue="1993"/>
@@ -93,7 +73,7 @@
                             </div>
                             <div class="select_box_3">
                                 <p:selectOneMenu value="#{carPage.filterYearBefore}"
-                                                 style="width: 70px">
+                                                 style="width: 69px">
                                     <f:selectItem itemLabel="До" itemValue=""/>
                                     <f:selectItem itemLabel="до 1992" itemValue="1992"/>
                                     <f:selectItem itemLabel="до 1995" itemValue="1995"/>
@@ -119,7 +99,7 @@
 <footer>
     <!--<div class="container">-->
         <p:dataGrid id="carTable" var="car" value="#{carPage.cars}" paginator="true" rows="6" columns="2"
-                    style="background-color: #F5F5F5;">
+                    style="background-color: #F5F5F5; border-color: #F5F5F5">
             <h:panelGrid columns="2" cellspacing="10" style="margin: 5px 50px 0px auto;">
                 <p:graphicImage value="#{car.pictures}" width="230px" height="200px"/>
                 <h:panelGrid columns="1" cellspacing="8"

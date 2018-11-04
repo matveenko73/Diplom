@@ -16,6 +16,8 @@ public class CarPage {
     @Inject
     private CarRepository carRepository;
 
+    private String filterPriceBefore;
+    private String filterPriceAfter;
     private String filterRegion;
     private String filterBrand;
     private String filterModel;
@@ -221,6 +223,22 @@ public class CarPage {
         this.filterRegion = filterRegion;
     }
 
+    public String getFilterPriceBefore() {
+        return filterPriceBefore;
+    }
+
+    public void setFilterPriceBefore(String filterPriceBefore) {
+        this.filterPriceBefore = filterPriceBefore;
+    }
+
+    public String getFilterPriceAfter() {
+        return filterPriceAfter;
+    }
+
+    public void setFilterPriceAfter(String filterPriceAfter) {
+        this.filterPriceAfter = filterPriceAfter;
+    }
+
     public void applyFilter() {
         if (filterBrand != null && filterBrand.trim().length() > 0 &&
                 filterModel != null && filterModel.trim().length() > 0) {
@@ -249,7 +267,7 @@ public class CarPage {
                 filterYearAfter != null && filterYearAfter.trim().length() > 0) {
             cars = carRepository.findByProductionYearGreaterThanEqualAndProductionYearLessThanEqualOrderByIdDesc(
                     Integer.parseInt(filterYearAfter), Integer.parseInt(filterYearBefore));
-                    return;
+            return;
         }
         if (filterYearBefore != null && filterYearBefore.trim().length() > 0) {
             cars = carRepository.findByProductionYearLessThanEqualOrderByIdDesc(Integer.parseInt(filterYearBefore));
@@ -260,6 +278,23 @@ public class CarPage {
             cars = carRepository.findByProductionYearGreaterThanEqualOrderByIdDesc(Integer.parseInt(filterYearAfter));
             return;
         }
+
+
+        if (filterPriceBefore != null && filterPriceBefore.trim().length() > 0 &&
+                filterPriceAfter != null && filterPriceAfter.trim().length() > 0) {
+            cars = carRepository.findByPriceGreaterThanEqualAndPriceLessThanEqualOrderByIdDesc(filterPriceAfter, filterPriceBefore);
+            return;
+        }
+        if (filterPriceBefore != null && filterPriceBefore.trim().length() > 0) {
+            cars = carRepository.findByPriceLessThanEqualOrderByIdDesc(filterPriceBefore);
+            return;
+        }
+
+        if (filterPriceAfter != null && filterPriceAfter.trim().length() > 0) {
+            cars = carRepository.findByPriceGreaterThanEqualOrderByIdDesc(filterPriceAfter);
+            return;
+        }
+
     }
 }
 
