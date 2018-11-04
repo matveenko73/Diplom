@@ -197,17 +197,17 @@ public class CarPage {
     public void applyFilter() {
         if (filterYearBefore != null && filterYearBefore.trim().length() > 0 &&
                 filterYearAfter != null && filterYearAfter.trim().length() > 0) {
-            cars = carRepository.findByProductionYearGreaterThanEqualAndProductionYearLessThanEqual(
+            cars = carRepository.findByProductionYearGreaterThanEqualAndProductionYearLessThanEqualOrderByIdDesc(
                     Integer.parseInt(filterYearAfter), Integer.parseInt(filterYearBefore));
                     return;
         }
         if (filterYearBefore != null && filterYearBefore.trim().length() > 0) {
-            cars = carRepository.findByProductionYearLessThanEqual(Integer.parseInt(filterYearBefore));
+            cars = carRepository.findByProductionYearLessThanEqualOrderByIdDesc(Integer.parseInt(filterYearBefore));
             return;
         }
 
         if (filterYearAfter != null && filterYearAfter.trim().length() > 0) {
-            cars = carRepository.findByProductionYearGreaterThanEqual(Integer.parseInt(filterYearAfter));
+            cars = carRepository.findByProductionYearGreaterThanEqualOrderByIdDesc(Integer.parseInt(filterYearAfter));
             return;
         }
 

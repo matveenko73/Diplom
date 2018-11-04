@@ -8,8 +8,8 @@ import java.util.List;
 public interface CarRepository extends JpaRepository<Car, Long> {
     List<Car> findAllByOrderByIdDesc();
 
-    List<Car> findByProductionYearLessThanEqual(Integer productionYear);
-    List<Car> findByProductionYearGreaterThanEqual(Integer productionYear);
-    List<Car> findByProductionYearGreaterThanEqualAndProductionYearLessThanEqual(Integer filterYearAfter,
+    List<Car> findByProductionYearLessThanEqualOrderByIdDesc(Integer productionYear);
+    List<Car> findByProductionYearGreaterThanEqualOrderByIdDesc(Integer productionYear);
+    List<Car> findByProductionYearGreaterThanEqualAndProductionYearLessThanEqualOrderByIdDesc(Integer filterYearAfter,
                                                                                  Integer filterYearBefore);
 }
