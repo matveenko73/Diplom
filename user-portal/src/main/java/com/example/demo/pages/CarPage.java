@@ -16,6 +16,7 @@ public class CarPage {
     @Inject
     private CarRepository carRepository;
 
+    private String filterYearBefore;
     private Long id;
     private String info;
     private String pictures;
@@ -168,6 +169,14 @@ public class CarPage {
         this.cars = cars;
     }
 
+    public String getFilterYearBefore() {
+        return filterYearBefore;
+    }
+
+    public void setFilterYearBefore(String filterYearBefore) {
+        this.filterYearBefore = filterYearBefore;
+    }
+
     public String getInfo() {
         return info;
     }
@@ -175,4 +184,12 @@ public class CarPage {
     public void setInfo(String info) {
         this.info = info;
     }
+
+    public void applyFilter() {
+        if (filterYearBefore != null && filterYearBefore.trim().length() > 0) {
+            cars = carRepository.findByProductionYearLessThanEqual(Integer.parseInt(filterYearBefore));
+        }
+    }
 }
+
+
