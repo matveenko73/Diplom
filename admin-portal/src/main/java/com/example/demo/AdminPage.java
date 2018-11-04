@@ -27,8 +27,9 @@ public class AdminPage {
 
     public void runAutoRia() {
         new AutoRiaTask((cars) -> {
+            List<Car> newCars = updateExistingCarsInDataBase(cars);
             carRepository.saveAll(cars);
-            LOGGER.info("Cars saved");
+            LOGGER.info("saved " + newCars.size() + " cars");
         }).run();
     }
 
