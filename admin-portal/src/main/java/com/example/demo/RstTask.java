@@ -164,25 +164,3 @@ public class RstTask extends Thread {
 }
 
 
-//        int k = 0;
-//
-//        for (WebElement nextPage : nextPages) {
-//            for (int i = 0; i < pictures.size(); i++) {
-//                System.out.println(models.get(i).getText());
-//
-//                Car car = new Car();
-//                car.setPictures(pictures.get(i).getAttribute("src"));
-//                car.setUrles(urles.get(i).getAttribute("href"));
-//                result.add(car);
-//
-//                for (int j = 0; j < 3; j++) {
-//                    System.out.println(prices.get(k).getText());
-//                    k++;
-//                }
-//                System.out.println();
-//            }
-//            nextPage.click();
-//        }
-//
-//        resultListener.accept(result);
-

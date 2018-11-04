@@ -35,8 +35,9 @@ public class AdminPage {
     private List<Car> updateExistingCarsInDataBase(List<Car> cars) {
         List<Car> newCars = new ArrayList<>();
         for (Car car : cars) {
-            List<Car> alreadyExist = carRepository.findByMileageAndProductionYearAndEngineSize(car.getMileage(),
-                    car.getProductionYear(), car.getEngineSize());
+            List<Car> alreadyExist = carRepository.findByMileageAndProductionYearAndEngineSizeAndFuelAndPriceAndRegion
+                    (car.getMileage(), car.getProductionYear(), car.getEngineSize(),
+                            car.getFuel(), car.getPrice(), car.getRegion());
             if (!alreadyExist.isEmpty()) {
                 for (Car carExist : alreadyExist) {
                     carExist.setInfo(car.getInfo());
@@ -45,9 +46,6 @@ public class AdminPage {
                             ? car.getState()
                             : carExist.getState());
 
-                    carExist.setFuel(car.getFuel());
-                    carExist.setPrice(car.getPrice());
-                    carExist.setRegion(car.getRegion());
                     carExist.setUrles(car.getUrles());
                     carExist.setPictures(car.getPictures());
                     carExist.setBrand(car.getBrand());
@@ -56,7 +54,8 @@ public class AdminPage {
                     carExist.setDriveUnit(car.getDriveUnit());
                     carRepository.save(carExist);
                     LOGGER.info("car was updated " + carExist.getMileage()
-                            + " " + carExist.getProductionYear() + " " + carExist.getEngineSize());
+                            + " " + carExist.getProductionYear() + " " + carExist.getEngineSize() +
+                            " " + carExist.getFuel() + " " + car.getPrice() + " " + car.getRegion());
                 }
             } else {
                 newCars.add(car);
