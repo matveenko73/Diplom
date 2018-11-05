@@ -11,6 +11,7 @@ public class Car {
     private Long id;
     private String info;
     private String pictures;
+    @Column(length = 1500)
     private String urles;
     private String brand;
     private String model;

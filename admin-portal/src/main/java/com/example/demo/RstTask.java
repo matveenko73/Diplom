@@ -160,6 +160,8 @@ public class RstTask extends Thread {
         } catch (Exception ex) {
             System.out.println("Исключение: " + ex);
         }
+
+        driver.close();
     }
 }
 

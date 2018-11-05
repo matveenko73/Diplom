@@ -282,7 +282,8 @@ public class CarPage {
 
         if (filterPriceBefore != null && filterPriceBefore.trim().length() > 0 &&
                 filterPriceAfter != null && filterPriceAfter.trim().length() > 0) {
-            cars = carRepository.findByPriceGreaterThanEqualAndPriceLessThanEqualOrderByIdDesc(filterPriceAfter, filterPriceBefore);
+            cars = carRepository.findByPriceGreaterThanEqualAndPriceLessThanEqualOrderByIdDesc(filterPriceAfter,
+                    filterPriceBefore);
             return;
         }
         if (filterPriceBefore != null && filterPriceBefore.trim().length() > 0) {

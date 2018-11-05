@@ -145,7 +145,7 @@ public class AutoRiaTask extends Thread {
         } catch (Exception ex) {
             System.out.println(ex);
         }
-
+        driver.close();
 
     }
 }
